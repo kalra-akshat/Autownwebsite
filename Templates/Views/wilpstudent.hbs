@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-eqiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="image/png" sizes="16x16" href="C:\Users\91901\Desktop\C++ VSCODE\icons8-tech-50.png">
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+     <title>WILP Student Registration</title>
+     
+    
+     
+
+     <script>
+        function validateMobile(input) {
+            var mobileInput = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+            input.value = mobileInput; // Update the input value
+
+            var warning = document.getElementById('mobile-warning');
+            if (mobileInput.length !== 10) {
+                warning.style.display = 'block';
+            } else {
+                warning.style.display = 'none';
+            }
+        }
+    </script>
+
+
+     <style>
+     *{
+    margin:0 ;
+    padding:0 ;
+    box-sizing:border-box;
+    font-family: 'Josefin Sans', sans-serif;
+     }
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background: url('./newbg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+.wrapper{
+    width:420px;
+    background:transparent;
+    color: #fff;
+    border: 2px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0,0,0,.2)
+    
+    border-radius:10px;
+    padding: 30px 40px;
+}
+
+.wrapper h1{
+    font-size:30px;
+    color:black;
+    text-align:center;
+    margin-bottom: 10PX;
+}
+
+.wrapper.input-box{
+    width:100%;
+    height:50px;
+    
+    
+}
+
+.input-box input{
+    width: 100%;
+    height:100%;
+    background:transparent;
+    border:none;
+    outline:none;
+    border:2px solid rgba(255,255,255,.2);
+    border-radius:20px;
+    font-size:18px;
+    font-weight: normal;
+    color:black;
+    padding:20px 45px 20px 20px;
+}
+
+
+
+
+
+
+.input-box input::placeholder{
+    color:rgba(0, 0, 0, 0.46);
+    font-weight: normal;
+    
+}
+
+.input-box input:focus,
+.input-box input:valid{
+    border-color: #0f5173;
+}
+.input-box i{
+    position: absolute;
+    right:20px;
+    top: 50%;
+    transform: transalteY(-50%);
+    font-size:20px;
+}
+
+.wrapper .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    color: #fff;
+    margin:  15px;
+}
+
+.remember-forgot label input{
+    accent-color: #fff;
+    margin-right:3px;
+}
+
+.remember-forgot a{
+    color: #fff;
+    text-decoration:none;
+}
+.remember-forgot a:hover{
+    text-decoration:underline;
+}
+.wrapper .btn{
+    width: 100%;
+    height: 65px;
+    background: #fff;
+    border:none;
+    outline:none;
+    border-radius:40px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    cursor: pointer;
+    font-size: 25px;
+    color: #333;
+    font-weight:bold;
+}
+
+.wrapper .register-link{
+    font-size:14.5px;
+    color: #fff;
+    text-align: center;
+    margin:20px 0 15px;
+}
+
+.register-link p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover{
+    text-decoration:underline;
+    color:#fff;
+}
+
+.popup{
+    width: 400px;
+    background:#fff ;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    transform: translate(-50%, -50%) scale(0.1);
+    left: 208px;
+
+    text-align: center;
+    padding: 0 30px 30px;
+    color:#333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s ;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+}
+
+.popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30 px 0 10 px;
+
+}
+
+.popup button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background-color: black;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+
+}
+
+
+
+
+
+     </style>
+     
+    
+
+
+</head>
+
+<body>
+        
+
+        <div class="wrapper"  style="width: 483.2px;">
+            <form action="/wilpstudent" method="post" >
+                <h1>WILP Student Registration</h1>
+                <br>
+
+                <div class="input-box">
+                    <input type="text" placeholder="BITS ID" name="id"
+                    required> 
+                    
+                </div>
+                <br>
+
+                <div class="input-box">
+                    <input type="text" placeholder="Name"  name="name"
+                    required> 
+                    
+                </div>
+                <br>
+
+                <div class="input-box">
+
+                    
+                    
+                    <input type="text" id="mobile" name="mobile" placeholder="Mobile" oninput="validateMobile(this);" name="mobile" required>
+                    <span style="display: none; padding-top: 5px; padding-left: 20px; ">Please enter a 10-digit mobile number!</span>
+                    
+                    
+                   
+                </div>
+                       
+                
+               <br>
+                <div class="input-box">
+                    <input type="text" placeholder="Company"   name="company"
+                    required
+                    style=" margin-bottom: 20px;">
+                   
+    
+                    
+               <br>
+                <div class="input-box">
+                    <input type="text" placeholder="Project title" name="project"  
+                    required style="margin-bottom: 20px;"> 
+                
+               <br>
+
+                
+
+
+
+                
+
+
+
+
+
+                <button type="submit" class="btn" style="margin-top: 10px; margin-bottom: 10px;">Register</button>
+                
+
+                
+            </form>
+        </div>
+
+        
+</body>
+</html>
